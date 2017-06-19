@@ -1,8 +1,17 @@
-function to_roman (num) {
-  // your implementation code here
+function to_roman(num) {
+  var result = '';
+  var decimal = [1000, 500, 400, 100, 50, 40, 10, 9, 5, 4, 1];
+  var roman = ["M", "D", "CD","C", "L","XL", "X","IX", "V","IV","I"];
+
+  for (var i = 0; i < decimal.length; i++) {
+    while (num%decimal[i]<num) {
+      result += roman[i];
+      num -= decimal[i];
+    }
+  }
+  return result;
 }
 
-// Drive code
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
 console.log('——————|——————————|———————')

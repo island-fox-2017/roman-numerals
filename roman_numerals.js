@@ -1,6 +1,20 @@
+'use strict'
+
 function to_roman (num) {
-  // your implementation code here
-}
+  let num2 = num;
+  let roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+  let arab = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1  ];
+  let result = '';
+
+  for (var i = 0; i <= arab.length - 1 ; i++) {
+    while (num2 >= arab[i]) {
+      result += roman[i];
+      num2 -= arab[i];
+    }
+  }
+
+  return result
+} // ----- to_roman
 
 // Drive code
 console.log('My totally sweet testing script for new roman\n')

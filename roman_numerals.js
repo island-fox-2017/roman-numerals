@@ -16,12 +16,12 @@ var romanMatrix = [
 ];
 
 function to_roman(num){
-  var tampung = [];
+  var result = [];
   for(var i = 0; i < romanMatrix.length; i++)
   {
     if(num >= romanMatrix[i][0])
     {
-      tampung.push(romanMatrix[i][1]);
+      result.push(romanMatrix[i][1]);
       if(num % romanMatrix != 0)
       {
           num = num % romanMatrix[i][0];
@@ -30,9 +30,10 @@ function to_roman(num){
       {
           num = num / romanMatrix[i][0];
       }
+      console.log(num);
     }
   }
-  return tampung.join('');
+  return result.join('');
 }
 
 

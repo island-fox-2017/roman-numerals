@@ -1,52 +1,35 @@
-const assert = require('assert')
+var lookup = [
+  [1000, 'M'],
+  [900, 'CM'],
+  [500, 'D'],
+  [400, 'CD'],
+  [100, 'C'],
+  [90, 'XC'],
+  [50, 'L'],
+  [40, 'XL'],
+  [10, 'X'],
+  [9, 'IX'],
+  [5, 'V'],
+  [4, 'IV'],
+  [1, 'I']
+];
 
-const romans = require('./roman_numerals.js')
+function to_roman(num) {
+  if (num === 0) {
+    return '';
+  }
+  for (var i = 0; i < lookup.length; i++) {
+    if (num >= lookup[i][0]) {
+      return lookup[i][1] + to_roman(num - lookup[i][0]);
+    }
+  }
+}
 
-describe('Convert To Roman Old Version', () => {
-  it('should returns I if input is 1', () => {
-    assert.equal(romans.to_roman_old(1), 'I')
-  })
-  it('should returns IIII if input is 4', () => {
-    assert.equal(romans.to_roman_old(4), 'IIII')
-  })
-  it('should returns V if input is 5', () => {
-    assert.equal(romans.to_roman_old(5), 'V')
-  })
-  it('should returns VIIII if input is 9', () => {
-    assert.equal(romans.to_roman_old(9), 'VIIII')
-  })
-  it('should returns XIII if input is 13', () => {
-    assert.equal(romans.to_roman_old(13), 'XIII')
-  })
-  it('should returns LIIII if input is 54', () => {
-    assert.equal(romans.to_roman_old(54), 'LIIII')
-  })
-  it('should returns LV if input is 55', () => {
-    assert.equal(romans.to_roman_old(55), 'LV')
-  })
-  it('should returns MCDLIII if input is 1453', () => {
-    assert.equal(romans.to_roman_old(1453), 'MCDLIII')
-  })
-  it('should returns MDCXLVI if input is 1646', () => {
-    assert.equal(romans.to_roman_old(1646), 'MDCXLVI')
-  })
-})
-
-
-describe('Roman Numerals new', () => {
-  it('4 becomes IV', () => {
-    assert.equal(romans.to_roman(4), 'IV')
-  })
-  it('9 becomes IX', () => {
-    assert.equal(romans.to_roman(9), 'IX')
-  })
-  it('13 becomes XIII', () => {
-    assert.equal(romans.to_roman(13), 'XIII')
-  })
-  it('1453 becomes MCDLIII', () => {
-    assert.equal(romans.to_roman(1453), 'MCDLIII')
-  })
-  it('1646 becomes MDCXLVI', () => {
-    assert.equal(romans.to_roman(1646), 'MDCXLVI')
-  })
-})
+console.log('My totally sweet testing script for new roman\n')
+console.log('input | expected | actual')
+console.log('——————|——————————|———————')
+console.log('4     | IV       | ', to_roman(4))
+console.log('9     | IX       | ', to_roman(9))
+console.log('13    | XIII     | ', to_roman(13))
+console.log('1453  | MCDLIII  | ', to_roman(1453))
+console.log('1646  | MDCXLVI  | ', to_roman(1646))

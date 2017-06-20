@@ -1,6 +1,27 @@
+
+
 function to_roman (num) {
-  // your implementation code here
+  var roman =['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  var arabic = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  var result = '';
+
+
+  //console.log(`masuk function ${arabic.length}`);
+  for (var i = 0; i <= roman.length; i++) {
+    //console.log('masuk for');
+    while(num >= arabic[i]) {
+      //console.log(roman[i]);
+      result = result + roman[i];
+      num = num - arabic[i];
+      //console.log(num);
+    }
+  }
+
+  return result
 }
+
+console.log(to_roman(4));
+
 
 // Drive code
 console.log('My totally sweet testing script for new roman\n')

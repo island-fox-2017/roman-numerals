@@ -22,15 +22,7 @@ function to_roman(num){
     if(num >= romanMatrix[i][0])
     {
       result.push(romanMatrix[i][1]);
-      if(num % romanMatrix != 0)
-      {
-          num = num % romanMatrix[i][0];
-      }
-      else
-      {
-          num = num / romanMatrix[i][0];
-      }
-      console.log(num);
+      num = num - romanMatrix[i][0];
     }
   }
   return result.join('');

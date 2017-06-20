@@ -1,8 +1,57 @@
 function to_roman (num) {
-  // your implementation code here
+// your implementation code here
+arr = [];
+
+while(num>0){
+   if(num < 4 ){
+     arr.push ("I");
+     num = num - 1
+   }else if( num == 4){
+     arr.push("IV")
+     num = num - 4
+   }else if( num < 9){
+     arr.push("V")
+     num = num - 5;
+   }else if( num == 9){
+     arr.push("IX")
+     num = num - 9
+   }else if( num < 40){
+     arr.push("X")
+     num = num - 10
+   }else if( num >= 40 && num < 50){
+     arr.push("XL")
+     num = num - 40;
+   }else if( num < 90){
+     arr.push("L")
+     num = num - 50;
+   }else if( num == 90){
+     arr.push("XC")
+     num = num - 90;
+   }else if( num < 100){
+     arr.push("C")
+     num = num - 100;
+   }else if( num >= 400 && num <=500){
+     arr.push("CD")
+     num = num - 400;
+   }else if( num < 500){
+     arr.push("C")
+     num = num - 100;
+   }else if( num == 900){
+     arr.push("CM")
+     num = num - 900;
+   }else if( num < 1000){
+       arr.push("D")
+       num = num - 500;
+    }else if( num < 10000){
+        arr.push("M")
+        num = num - 1000;
+
+}
+}
+return (arr.join(""));
 }
 
-// Drive code
+//Drive code
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
 console.log('——————|——————————|———————')

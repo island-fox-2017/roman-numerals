@@ -1,5 +1,15 @@
-function to_roman (num) {
+function to_roman(num) {
   // your implementation code here
+  let roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'LC', 'C', 'CD', 'D', 'DM', 'M']
+  let arabic = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
+  let result = ''
+  for (let i = arabic.length - 1; i >= 0; i--) {
+    while (num >= arabic[i]) {
+      num = num - arabic[i];
+      result = result + roman[i];
+    }
+  }
+  return result
 }
 
 // Drive code

@@ -1,5 +1,5 @@
 {
-  "name": "roman_numerals",
+  "name": "adnin",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,5 +9,15 @@
   },
   "devDependencies": {
     "mocha": "^3.2.0"
-  }
+  },
+  "description": "Run code:",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/island-fox-2017/roman-numerals.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/island-fox-2017/roman-numerals/issues"
+  },
+  "homepage": "https://github.com/island-fox-2017/roman-numerals#readme"
 }

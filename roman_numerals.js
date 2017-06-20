@@ -1,15 +1,15 @@
 
 
 function to_roman(input) {
-  var nums = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
-  var romans = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
-  var result = "";
+  var nums = [1000,900,500,400,100,90,50,40,10,9,5,4,1]//variabel angka
+  var romans = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]//variabel romawi
+  var result = "";//hasil yang menampung
 
-  for(let i=0; i< nums.length; i++) { 
-    if(input >= nums[i]) {
-      while(input >= nums[i]) {
-        result += romans[i];
-        input = input - nums[i];
+  for(let i=0; i< nums.length; i++) {//pengulangan sepanjang number
+    if(input >= nums[i]) {//jika input lebih besar dari sama dengan deret nums, maka
+      while(input >= nums[i]) {//lakukan pengulangan while angka masukan yang lebih besar dari sama dengan deret nums
+        result += romans[i];//masukan ke variabel yang menampung str romawi
+        input = input - nums[i]; //melakukan pengurangan saat pengecekan
       }
 
     }
